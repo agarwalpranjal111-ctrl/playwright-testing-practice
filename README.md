@@ -18,6 +18,7 @@ I'm new to test automation. I built this to learn how testing and CI/CD work, an
 | Add three todos | Three tasks all appear on the page |
 | List count | The list shows exactly 2 items after adding 2 |
 | Completed tab | Only ticked tasks show in the Completed tab |
+Plus 3 tests for my own mini app (`tests/mini.spec.ts`).
 
 ## How to run it
 
@@ -42,3 +43,14 @@ npx playwright test --project=firefox
 - Saved login state and API setup for faster tests
 - Finding flaky tests
 - Error alerting
+
+## Bug experiment
+
+I built a small todo app (`app/index.html`) with 3 tests. Then I put bugs into it on purpose, to check whether my tests would catch them.
+
+| Bug I added | Caught? | Which test caught it |
+|---|---|---|
+| Counter adds 2 instead of 1 | Yes | counter shows 2 items after adding 2 |
+| Empty tasks allowed | Yes | empty task is not added |
+
+**What I learned:** a test only protects what it checks. If I had written no test for empty tasks, that bug would have gone through unnoticed. Deciding what to test matters as much as writing the test.
