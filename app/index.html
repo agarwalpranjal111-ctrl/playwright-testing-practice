@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head><title>Mini Todo</title></head>
+<body>
+  <h1>Mini Todo</h1>
+  <input id="task" placeholder="Add a task">
+  <button id="add">Add</button>
+  <ul id="list"></ul>
+  <p id="count">0 items</p>
+
+  <script>
+    const list = document.getElementById('list');
+    const count = document.getElementById('count');
+    let total = 0;
+
+    document.getElementById('add').addEventListener('click', () => {
+      const input = document.getElementById('task');
+      if (input.value.trim() === '') return;
+      const li = document.createElement('li');
+      li.textContent = input.value;
+      list.appendChild(li);
+      total = total + 1;
+      count.textContent = total + ' items';
+      input.value = '';
+    });
+  </script>
+</body>
+</html>
