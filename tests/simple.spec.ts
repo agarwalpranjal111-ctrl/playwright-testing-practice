@@ -9,7 +9,7 @@ test('can add two todos', async ({ page }) => {
   await page.keyboard.press('Enter');
   await expect(page.getByText('First task')).toBeVisible();
   await expect(page.getByText('Second task')).toBeVisible();
-  await expect(page.getByText('Third task')).toBeVisible();
+  await expect(page.getByText('Fourth task')).toBeVisible();
 });
 test('list shows 2 items', async ({ page }) => {
   await page.goto('https://demo.playwright.dev/todomvc');
